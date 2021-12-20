@@ -1,14 +1,3 @@
--- Adminer 4.8.1 PostgreSQL 13.2 (Debian 13.2-1) dump
-
-DROP TABLE IF EXISTS "paises";
-CREATE TABLE "public"."paises" (
-    "codigoISO3" character(3) NOT NULL,
-    "codigoISO2" character(2) NOT NULL,
-    "cod_numerico" numeric(3,0) NOT NULL,
-    "nombre" character varying(50) NOT NULL,
-    CONSTRAINT "paises_codigoiso2_unique" UNIQUE ("codigoISO2"),
-    CONSTRAINT "paises_pkey" PRIMARY KEY ("codigoISO3")
-) WITH (oids = false);
 
 INSERT INTO "paises" ("codigoISO3", "codigoISO2", "cod_numerico", "nombre") VALUES
 ('AND',	'AD',	20,	'Andorra'),

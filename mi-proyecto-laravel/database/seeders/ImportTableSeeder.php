@@ -13,7 +13,7 @@ class ImportTableSeeder extends Seeder
      */
     public function run()
     {
-        $sql = public_path('paises.sql');
-        DB::table('paises')->index();
+        $sql = database_path('paises.sql');
+        DB::unprepared(file_get_contents($sql));
     }
 }
