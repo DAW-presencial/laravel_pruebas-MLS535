@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Paises;
+//use Illuminate\Auth\Access\Gate;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
-class PaisesController extends Controller
+class AgendaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,13 @@ class PaisesController extends Controller
      */
     public function index()
     {
-        $paises = Paises::all();
-        return view('paises', compact('paises'));
+        //
+        Gate::define('rascar', function ($user){
+            return true;
+        });
+        abort_unless(Gate::allows('rascar'), 403);
+        return 'Hola mundo, estás en el AgendaController@index';
+
     }
 
     /**
@@ -31,7 +37,7 @@ class PaisesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,10 +48,10 @@ class PaisesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Paises $paises
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Paises $paises)
+    public function show($id)
     {
         //
     }
@@ -53,10 +59,10 @@ class PaisesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Paises $paises
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paises $paises)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +70,11 @@ class PaisesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Paises $paises
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paises $paises)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +82,10 @@ class PaisesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Paises $paises
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paises $paises)
+    public function destroy($id)
     {
         //
     }

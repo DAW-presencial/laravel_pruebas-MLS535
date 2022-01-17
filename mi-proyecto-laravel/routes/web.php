@@ -1,5 +1,6 @@
 <?php
-use app\Models\Pais;
+
+use App\Http\Controllers\PaisesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('contacto', function (){
-    return 'Hola está es la página de contacto';
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Route::get('contacto', function (){
+//    return 'Hola está es la página de contacto';
+//});
 
 
 //Pasar parametros: y que sea obligatorio y si no queremos que sea obligatorio hacemos {nombre?} y en $nombre
@@ -27,7 +28,9 @@ Route::get('contacto', function (){
 //Route::get('saludo/{nombre}', function ($nombre){
 //    return 'saludos '. $nombre;
 //});
-Route::get('pruebasPais', function(){
+//Route::get('pruebasPais', function(){
+//
+//});
+Route::get('/paises', [PaisesController::class, 'index']);
 
-});
-Route::resource('paises', 'PaisesController');
+
