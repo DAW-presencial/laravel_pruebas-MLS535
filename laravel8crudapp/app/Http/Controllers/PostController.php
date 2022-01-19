@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -94,7 +95,7 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function destroy(Post $post)
     {
