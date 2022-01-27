@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Gate;
 use \App\Http\Controllers\AgendaController;
+use \App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +35,22 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/agenda',[AgendaController::class, 'index'])->name('agenda');
+
+
+Route::get('/home', function(){
+    return view('home');
+})->name('home');
+
+Route::view('contact', 'contact')->name('contact');
+Route::post('contact', [MessageController::class, 'store']);
+
+Route::get('/about', function(){
+    return view('about');
+})->name('about');
+
+
+
+
+Route::get('/portfolio', PortfolioController::class)->name('portfolio');
+
+Route::resource('/project', AgendaController::class)->except('index', 'show');

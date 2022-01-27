@@ -1,6 +1,10 @@
-<?php
-//    echo "Bienvenida ". $nombre;
-phpinfo();
-//    ?>
-<h1>Hola</h1>
-Bienvenida {{$nombre ?? 'Invitado'}}
+@section('title', 'home')
+
+@extends('layout')
+
+@section('content')
+
+    <h1>Aquí se añade todo el contenido que queramos</h1>
+
+    @endsection
+
