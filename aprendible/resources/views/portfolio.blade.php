@@ -2,20 +2,21 @@
     Portfolio
 @endsection
 
-@extends('layout')
+{{--@extends('layout')--}}
 
-@section('content')
+{{--@section('content')--}}
 
-    <h1>Portfolio</h1>
+{{--    <h1>Portfolio</h1>--}}
 
 
-    <ul>
-         @forelse ($portfolio as $portfolioItem)
-        <li>{{  $portfolioItem['title']}} <pre>{{var_dump($loop->last ? 'es el último' : '')}}</pre></li>
-
-        @empty
-            <li>No hay proyectos para mostrar</li>
-        @endforelse
+{{--    <ul>--}}
+{{--         @forelse ($projects as $project)--}}
+{{--        <li><a href="{{route('projects.show', $project)}}">{{  $project->title}} </a></li>--}}
+{{--         <p>{{$portfolioItem->description}}</p><br>--}}
+{{--            <p>{{$portfolioItem->created_at}}</p>--}}
+{{--        @empty--}}
+{{--            <li>No hay proyectos para mostrar</li>--}}
+{{--        @endforelse--}}
 
 
 

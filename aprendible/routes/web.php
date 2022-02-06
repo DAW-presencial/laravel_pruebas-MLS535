@@ -37,7 +37,7 @@ require __DIR__.'/auth.php';
 Route::get('/agenda',[AgendaController::class, 'index'])->name('agenda');
 
 
-Route::get('/home', function(){
+Route::get('/', function(){
     return view('home');
 })->name('home');
 
@@ -51,6 +51,16 @@ Route::get('/about', function(){
 
 
 
-Route::get('/portfolio', PortfolioController::class)->name('portfolio');
-
-Route::resource('/project', AgendaController::class)->except('index', 'show');
+Route::resource('/project', PortfolioController::class)->names('projects');
+//Route::get('/portfolio',[PortfolioController::class, 'index'])->name('projects.index');
+//Route::get('/portfolio/create',[PortfolioController::class, 'create'])->name('projects.create');
+//
+//Route::get('/portfolio/{project}/editar',[PortfolioController::class, 'edit'])->name('projects.edit');
+//Route::patch('/portfolio/{project}',[PortfolioController::class, 'update'])->name('projects.update');
+//
+//Route::post('/portfolio',[PortfolioController::class, 'store'])->name('projects.store');
+//Route::get('/portfolio/{id}',[PortfolioController::class, 'show'])->name('portfolio.show');
+//Route::delete('/portfolio/{project}',[PortfolioController::class, 'destroy'])->name('projects.destroy');
+//
+//
+//Route::resource('/project', AgendaController::class)->names('projects')->parameters(['id'=>'project']);

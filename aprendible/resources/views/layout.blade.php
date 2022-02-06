@@ -14,10 +14,13 @@
 <nav>
 
     <ul>
-        <li class="{{setActive('home') }}"><a href="/"> Home</a></li>
-        <li class="{{setActive('About') }}"><a href="about"> About</a></li>
-        <li class="{{setActive('portfolio') }}"><a href="/portfolio"> portfolio</a></li>
-        <li class="{{setActive('contact') }}"><a href="/contact"> contact</a></li>
+        <li class="{{setActive('home') }}"><a href="{{route('home')}}"> Home</a></li>
+        <li class="{{setActive('About') }}"><a href="{{route('about')}}"> About</a></li>
+        <li class="{{setActive('projects.index') }}"><a href="{{route('projects.index')}}"> portfolio</a></li>
+        <li class="{{setActive('contact') }}"><a href="{{route('contact')}}"> contact</a></li>
+        @guest()
+        <li class="{{setActive('contact') }}"><a href="{{route('login')}}"> login</a></li>
+            @endguest()
     </ul>
 </nav>
 @yield('content')
