@@ -53,7 +53,7 @@
                                 <td>{{ $post->gender }}</td>
                                 <td>{{ $post->description }}</td>
                                 <td>{{ $post->email }}</td>
-                                <td>   <img src="/image/{{ $post->image }}" width="150px"></td>
+                                <td>   <img src="{{asset("image/". $post->image) }}" width="150px"></td>
                                 <td>
                                     <form action="{{ route('posts.destroy',$post) }}" method="POST">
 
