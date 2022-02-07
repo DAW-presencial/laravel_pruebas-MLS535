@@ -17,7 +17,7 @@ use App\Http\Controllers\PostController;
 Route::view('/','home')->name('home');
 
 Route::fallback(function () {
-    return redirect('/home');
+    return redirect('/');
 
 });
 

@@ -94,6 +94,9 @@
                         <div class="form-group">
                             <label><strong>@lang("Email") :</strong></label>
                             <input type="email" name="email" class="form-control" value="{{old('email')}}"/>
+                            @error('email')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="form-group custom-file">
