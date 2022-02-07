@@ -9,7 +9,7 @@
         <div class="col-md-6 offset-3 mt-5">
             <div class="card">
                 <div class="card-header bg-info">
-                    <h6 class="text-white">Editar un proyecto</h6>
+                    <h6 class="text-white">{{__("Editar un proyecto")}}</h6>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -19,7 +19,7 @@
                     </div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <strong>Whoops!</strong> @lang("There were some problems with your input.")<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -36,7 +36,7 @@
                             <input type="text" name="name" class="form-control"  value="{{old('name',$post->name)  }}"/>
                         </div>
                         <div class="form-group">
-                            <label><strong>Category :</strong></label><br>
+                            <label><strong>@lang("Category") :</strong></label><br>
                             <label><input type="checkbox" name="category[]" value="Laravel"> Laravel</label>
                             <label><input type="checkbox" name="category[]" value="JQuery"> JQuery</label>
                             <label><input type="checkbox" name="category[]" value="Bootstrap"> Bootstrap</label>
@@ -49,12 +49,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label><strong>Numero de horas realizadas :</strong></label><br>
+                            <label><strong>@lang("Numero de horas realizadas"):</strong></label><br>
                             <input type="number" name="number" class="form-control" value="{{old('number',$post->number)}}"/>
                         </div>
 
                         <div class="form-group">
-                            <label>Participant</label>
+                            <label>@lang("Participant")</label>
                             <select class="form-control" name="size" >
                                 <option selected>Pick Size</option>
                                 <option value="2">2</option>
@@ -65,7 +65,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label><strong>Radio boton:</strong></label><br>
+                            <label><strong>@lang("Gender"):</strong></label><br>
                             <label>
                                 <input type="radio" name="gender" class="form-control" value="Female" checked/>Female</label>
                             <label> <input type="radio" name="gender" class="form-control" value="Male"/>Male</label>
@@ -90,7 +90,7 @@
                         </div>
                         <p></p>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-success btn-sm">Save</button>
+                            <button type="submit" class="btn btn-success btn-sm">@lang("Save")</button>
                         </div>
 
 

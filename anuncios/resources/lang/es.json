@@ -183,5 +183,12 @@
     "Sign in": "Registrarse",
     "Email address": "Dirección de correo electrónico",
     "failed": "Fallo",
-    "Welcome to my project Crud": "Bienvenido a mi proyecto Crud"
+    "Welcome to my project Crud": "Bienvenido a mi proyecto Crud",
+    "Ha habido algunos problemas con tus inputs": "There were some problems with your input.",
+    "Categoria": "Category",
+    "Numero de horas realizadas": "Number or hours done",
+    "Participante": "Participant",
+    "Genero": "Gender",
+    "Descripcion": "Descripcion",
+    "Elegir archivo": "Choose File"
 }

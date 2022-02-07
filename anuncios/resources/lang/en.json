@@ -181,5 +181,12 @@
     "You may not leave a team that you created.": "You may not leave a team that you created.",
     "Sign in": "Sign in",
     "Email address": "Email address",
-    "Bienvenido a mi proyecto Crud": "Welcome to my project Crud"
+    "Bienvenido a mi proyecto Crud": "Welcome to my project Crud",
+    "There were some problems with your input.": "Ha habido algunos problemas con tus inputs",
+    "Category": "Categoria",
+    "Number or hours done": "Numero de horas realizadas",
+    "Participant": "Participante",
+    "Gender": "Genero",
+    "Description": "Descripcion",
+    "Choose File": "Elegir archivo"
 }

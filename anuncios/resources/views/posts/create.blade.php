@@ -20,7 +20,7 @@
                     </div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <strong>Whoops!</strong> @lang("There were some problems with your input.")<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -40,7 +40,7 @@
 
 {{--                        Category type:checkbox--}}
                         <div class="form-group">
-                            <label><strong>Category :</strong></label><br>
+                            <label><strong>{{__("Category")}} :</strong></label><br>
                             <label><input type="checkbox" name="category[]" value="Laravel"> Laravel</label>
                             <label><input type="checkbox" name="category[]" value="JQuery"> JQuery</label>
                             <label><input type="checkbox" name="category[]" value="Bootstrap"> Bootstrap</label>
@@ -50,19 +50,19 @@
                         </div>
 {{--                        date type:date--}}
                         <div class="form-group">
-                            <label><strong>Date :</strong></label><br>
+                            <label><strong>@lang("Date") :</strong></label><br>
                             <input type="date" name="date" class="form-control"  value="{{old('date')}}"/>
                             {!! $errors->first('date','<small>:message</small><br>') !!}
                         </div>
 {{--number type:number--}}
                         <div class="form-group">
-                            <label><strong>Numero de horas realizadas :</strong></label><br>
+                            <label><strong>@lang("Number or hours done") :</strong></label><br>
                             <input type="number" name="number" class="form-control"  value="{{old('number')}}"/>
                             {!! $errors->first('number','<small>:message</small><br>') !!}
                         </div>
 {{--type:select name size--}}
                         <div class="form-group">
-                            <label>Participant</label>
+                            <label>@lang("Participant")</label>
                             <select class="form-control" name="size">
                                 <option selected>Pick Size</option>
                                 <option value="2" @if(old('size') === '2') selected @endif>2</option>
@@ -75,7 +75,7 @@
 {{--                        type:radio--}}
 
                         <div class="form-group">
-                            <label><strong>Radio boton:</strong></label><br>
+                            <label><strong>@lang("Gender") :</strong></label><br>
                             <label>
                                 <input type="radio" name="gender" class="form-control" value="Female" checked/>Female</label>
                             <label> <input type="radio" name="gender" class="form-control" value="Male"/>Male</label>
@@ -91,12 +91,12 @@
 
 {{--  email--}}
                         <div class="form-group">
-                            <label><strong>Email :</strong></label>
+                            <label><strong>@lang("Email") :</strong></label>
                             <input type="email" name="email" class="form-control" value="{{old('email')}}"/>
                         </div>
 
                         <div class="form-group custom-file">
-                            <label class="custom-file-label" id="customFile">Choose File</label>
+                            <label class="custom-file-label" id="customFile">@lang("Choose File")</label>
                             <input name="image" type="file" class="custom-file-input" id="customFile">
                             @error('image')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
