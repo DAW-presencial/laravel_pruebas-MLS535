@@ -13,10 +13,10 @@
             @auth
                 <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
             @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{__("Log in")}}</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">@lang("Register")</a>
                 @endif
             @endauth
         </div>
@@ -25,7 +25,7 @@
 <div class="text-right m-3">
     <select class="form-select p-3" name="language" style="width: 10%;">
         <option value="en" {{ Session::get('language') == 'en' ? 'selected' : '' }}>English</option>
-        <option value="es" {{ Session::get('language') == 'es' ? 'selected' : '' }}>Spanish</option>
+        <option value="es" {{ Session::get('language') == 'es' ? 'selected' : '' }}>Español</option>
     </select>
 </div>
 

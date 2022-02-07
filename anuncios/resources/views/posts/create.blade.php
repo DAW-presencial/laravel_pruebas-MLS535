@@ -28,12 +28,13 @@
                             </ul>
                         </div>
                     @endif
+
                     <form method="post" action="{{ route('posts.store') }}" enctype="multipart/form-data">
                         @csrf
 {{--                        Name type:text--}}
                         <div class="form-group">
                             <label><strong>Name :</strong></label>
-                            <input type="text" name="name" class="form-control" />
+                            <input type="text" name="name" class="form-control" value="{{old('name')}}" />
                             {!! $errors->first('name','<small>:message</small><br>') !!}
                         </div>
 
@@ -50,13 +51,13 @@
 {{--                        date type:date--}}
                         <div class="form-group">
                             <label><strong>Date :</strong></label><br>
-                            <input type="date" name="date" class="form-control" />
+                            <input type="date" name="date" class="form-control"  value="{{old('date')}}"/>
                             {!! $errors->first('date','<small>:message</small><br>') !!}
                         </div>
 {{--number type:number--}}
                         <div class="form-group">
                             <label><strong>Numero de horas realizadas :</strong></label><br>
-                            <input type="number" name="number" class="form-control" />
+                            <input type="number" name="number" class="form-control"  value="{{old('number')}}"/>
                             {!! $errors->first('number','<small>:message</small><br>') !!}
                         </div>
 {{--type:select name size--}}
@@ -84,14 +85,14 @@
 {{--                        type:textarea--}}
                         <div class="form-group">
                             <label><strong>Description :</strong></label>
-                            <textarea class="form-control" rows="4" cols="40" name="description"></textarea>
+                            <textarea class="form-control" rows="4" cols="40" name="description">{{old('description')}}</textarea>
                             {!! $errors->first('description','<small>:message</small><br>') !!}
                         </div>
 
 {{--  email--}}
                         <div class="form-group">
                             <label><strong>Email :</strong></label>
-                            <input type="email" name="email" class="form-control" />
+                            <input type="email" name="email" class="form-control" value="{{old('email')}}"/>
                         </div>
 
                         <div class="form-group custom-file">

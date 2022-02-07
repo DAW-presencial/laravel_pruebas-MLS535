@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','category','number','date','size','gender','description','email','image'];
+    protected $fillable = ['name','category','number','date','size','gender','description','email','image', 'user_id'];
     /**
      * @var false|mixed|string
      */
@@ -23,5 +23,9 @@ class Post extends Model
     public function getCategoryAttribute($value)
     {
         return $this->attributes['category'] = json_decode($value);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

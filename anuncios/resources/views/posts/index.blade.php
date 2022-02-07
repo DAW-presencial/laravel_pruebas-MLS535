@@ -8,21 +8,21 @@
         <div class="col-md-12  mt-5">
             <div class="card">
                 <div class="card-header bg-info">
-                    <h6 class="text-white">How To Store Multiple Checkbox Value In Database using Laravel - HackTheStuff</h6>
+                    <h6 class="text-white">Crud Maite Ladaria</h6>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12 text-right mb-3">
-                            @can('create-post')
+                            @can('create',$newPost)
                             <a href="{{ route('posts.create') }}" class="btn btn-success">Create</a>
                             @endcan
                         </div>
                     </div>
-{{--                    @if ($message = Session::get('success'))--}}
-{{--                        <div class="alert alert-success">--}}
-{{--                            <p>{{ $message }}</p>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
 
 
                     <table class="table table-bordered">

@@ -31,6 +31,6 @@ require __DIR__.'/auth.php';
 //IMPORTANTE PORQUE CAMBIA EL IDIOMA!
 Route::get('language-change', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
 
-Route::resource('posts',PostController::class);
+Route::resource('posts',PostController::class)->middleware(['auth']);
 
 

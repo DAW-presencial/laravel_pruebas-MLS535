@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SaveProjectRequest;
 use App\Models\Post;
 //use Illuminate\Auth\Access\Gate;
+use Database\Seeders\PostSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -20,8 +21,8 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        $posts = Post::where('user_id', Auth::id())->get();
+        return view('posts.index', compact('posts'),['newPost'=> new Post]);
     }
 
     /**
@@ -36,7 +37,10 @@ class PostController extends Controller
 //           return view('posts.create');
 //       } ;
 //         abort(403);
-        $this->authorize('create-post');
+        //$this->authorize('create-post');
+
+        $this->authorize('create', new Post);
+
         return view('posts.create');
     }
 
@@ -81,8 +85,10 @@ class PostController extends Controller
 //        ------------------------
         $request->validated();
         //ELOQUENT FORM
-        $post = $request->all();
 
+
+        $post = $request->all();
+        $post['user_id'] = $request->user()->id;
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();

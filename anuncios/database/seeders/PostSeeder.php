@@ -24,7 +24,8 @@ class PostSeeder extends Seeder
             'size'=>'2',
             'gender'=>'Female',
             'description'=>'Esto es un seeder',
-            'email'=>'maria@maria.com', 'user_id'=> 1,
+            'email'=>'maria@maria.com',
+             'user_id'=> 1,
             'image'=> null
         ],
         [

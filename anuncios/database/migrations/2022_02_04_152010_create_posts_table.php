@@ -24,13 +24,14 @@ class CreatePostsTable extends Migration
             $table->longText('description');
             $table->string('email');
             $table->string('image')->nullable();
-//            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
 
-//            $table->foreign('user_id')
-//                ->references('id')
-//                ->on('users')
-//                ->onDelete('cascade');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
 
         });
     }
