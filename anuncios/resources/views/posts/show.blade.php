@@ -42,7 +42,7 @@
             <td>{{ $post->gender }}</td>
             <td>{{ $post->description }}</td>
             <td>{{ $post->email }}</td>
-            <td>   <img src="/image/{{ $post->image }}" width="150px" alt="image Show"></td>
+            <td>  <img src="{{asset("image/". $post->image) }}" width="150px" alt="image show"></td>
         </tr>
 
 </table>
