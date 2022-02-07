@@ -65,9 +65,9 @@
                             <label>Participant</label>
                             <select class="form-control" name="size">
                                 <option selected>Pick Size</option>
-                                <option value="2">2</option>
-                                <option value="4">4</option>
-                                <option value="8">8</option>
+                                <option value="2" @if(old('size') === '2') selected @endif>2</option>
+                                <option value="4" @if(old('size') === '4') selected @endif>4</option>
+                                <option value="8" @if(old('size') === '8') selected @endif>8</option>
                             </select>
                             {!! $errors->first('size','<small>:message</small><br>') !!}
                         </div>
