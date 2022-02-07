@@ -1,7 +1,7 @@
     @extends('layouts.layout')
     @section('content')
         @auth()
-            <p>{{auth()->user()->id}}</p>
+            <p>{{auth()->user()->name}}</p>
         @endauth
     <div class="row">
         <div class="col-md-12">

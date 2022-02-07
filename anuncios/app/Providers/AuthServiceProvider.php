@@ -28,6 +28,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-      //Gate::define('create-post', [PostPolicy::class, 'create']);
+      Gate::define('create-post', [PostPolicy::class, 'create']);
     }
 }
