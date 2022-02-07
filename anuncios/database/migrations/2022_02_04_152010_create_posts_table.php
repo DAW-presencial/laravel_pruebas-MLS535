@@ -14,7 +14,7 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
             $table->string('category');
             $table->integer('number');
@@ -23,14 +23,15 @@ class CreatePostsTable extends Migration
             $table->string('gender');
             $table->longText('description');
             $table->string('email');
-            $table->unsignedInteger('user_id');
             $table->string('image')->nullable();
+//            $table->unsignedInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+//            $table->foreign('user_id')
+//                ->references('id')
+//                ->on('users')
+//                ->onDelete('cascade');
+
         });
     }
 

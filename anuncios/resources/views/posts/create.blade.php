@@ -1,5 +1,8 @@
     @extends('layouts.layout')
     @section('content')
+        @auth()
+            <p>{{auth()->user()->id}}</p>
+        @endauth
     <div class="row">
         <div class="col-md-12">
             <div id="showimages"></div>

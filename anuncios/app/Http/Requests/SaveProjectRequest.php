@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class SaveProjectRequest extends FormRequest
 {
@@ -13,6 +14,8 @@ class SaveProjectRequest extends FormRequest
      */
     public function authorize()
     {
+
+        //VOLVER A PONER TRUE PARA QUE FUNCIONE VALIDATED() POR DEFECTO PONE QUE ES FALSE HAY QUE CAMBIARLO
         return true;
     }
 

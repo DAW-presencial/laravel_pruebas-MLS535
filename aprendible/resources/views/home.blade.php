@@ -14,7 +14,7 @@
     </form>
     <form action="{{ route('login') }}" method="get">
         @csrf
-        <input type="submit" name="login" value="Log in"/">
+        <input type="submit" name="login" value="Log in"/>
     </form>
 
 

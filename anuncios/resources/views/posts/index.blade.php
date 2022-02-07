@@ -13,7 +13,9 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12 text-right mb-3">
+                            @can('create-post')
                             <a href="{{ route('posts.create') }}" class="btn btn-success">Create</a>
+                            @endcan
                         </div>
                     </div>
 {{--                    @if ($message = Session::get('success'))--}}

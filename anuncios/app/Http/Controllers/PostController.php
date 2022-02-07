@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SaveProjectRequest;
 use App\Models\Post;
+//use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use MongoDB\Driver\Session;
+use Illuminate\Support\Facades\Gate;
+//use Illuminate\Contracts\Auth\Access\Gate;
 
 class PostController extends Controller
 {
@@ -30,7 +32,11 @@ class PostController extends Controller
     public function create()
     {
         //
-        $post = Post::where('user_id', Auth::user()->id)->get();
+//       if (Gate::allows('create-post')){
+//           return view('posts.create');
+//       } ;
+//         abort(403);
+        $this->authorize('create-post');
         return view('posts.create');
     }
 
@@ -76,7 +82,7 @@ class PostController extends Controller
         $request->validated();
         //ELOQUENT FORM
         $post = $request->all();
-        $post= Auth::user()->id;
+
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
