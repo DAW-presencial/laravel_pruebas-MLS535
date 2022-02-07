@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label><strong>@lang("Numero de horas realizadas"):</strong></label><br>
+                            <label><strong>@lang("Number of hours done"):</strong></label><br>
                             <input type="number" name="number" class="form-control" value="{{old('number',$post->number)}}"/>
                         </div>
 

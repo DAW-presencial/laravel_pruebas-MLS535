@@ -33,7 +33,7 @@
                         @csrf
 {{--                        Name type:text--}}
                         <div class="form-group">
-                            <label><strong>Name :</strong></label>
+                            <label><strong>@lang("Name") :</strong></label>
                             <input type="text" name="name" class="form-control" value="{{old('name')}}" />
                             {!! $errors->first('name','<small>:message</small><br>') !!}
                         </div>

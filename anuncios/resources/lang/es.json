@@ -184,11 +184,12 @@
     "Email address": "Dirección de correo electrónico",
     "failed": "Fallo",
     "Welcome to my project Crud": "Bienvenido a mi proyecto Crud",
-    "Ha habido algunos problemas con tus inputs": "There were some problems with your input.",
-    "Categoria": "Category",
-    "Numero de horas realizadas": "Number or hours done",
-    "Participante": "Participant",
-    "Genero": "Gender",
-    "Descripcion": "Descripcion",
-    "Elegir archivo": "Choose File"
+    "There were some problems with your input.": "Ha habido un problema en tus inputs.",
+    "Category": "Categoria",
+    "Number of hours done": "Numero de horas realizadas",
+    "Participant": "Participante",
+    "Gender": "Genero",
+    "Description": "Descripcion",
+    "Choose File": "Elegir un archivo",
+    "Date": "Fecha"
 }
