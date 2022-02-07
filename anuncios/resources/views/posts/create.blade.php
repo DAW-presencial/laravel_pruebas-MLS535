@@ -40,14 +40,15 @@
 
 {{--                        Category type:checkbox--}}
                         <div class="form-group">
-                            <label><strong>{{__("Category")}} :</strong></label><br>
-                            <label><input type="checkbox" name="category[]" value="Laravel"> Laravel</label>
-                            <label><input type="checkbox" name="category[]" value="JQuery"> JQuery</label>
-                            <label><input type="checkbox" name="category[]" value="Bootstrap"> Bootstrap</label>
-                            <label><input type="checkbox" name="category[]" value="Codeigniter"> Codeigniter</label>
-                            <label><input type="checkbox" name="category[]" value="JQuery UI"> JQuery UI</label>
-                            {!! $errors->first('category','<small>:message</small><br>') !!}
+                            <label><strong>@lang("Category") :</strong></label><br>
+                            <label><input type="checkbox" name="category[]" value="Laravel" @if(is_array(old('category')) && in_array("Laravel", old('category'))) checked @endif> Laravel</label>
+                            <label><input type="checkbox" name="category[]" value="JQuery" @if(is_array(old('category')) && in_array("JQuery", old('category'))) checked @endif> JQuery</label>
+                            <label><input type="checkbox" name="category[]" value="Bootstrap" @if(is_array(old('category')) && in_array("Bootstrap", old('category'))) checked @endif> Bootstrap</label>
+                            <label><input type="checkbox" name="category[]" value="Codeigniter" @if(is_array(old('category')) && in_array("Codeigniter", old('category'))) checked @endif> Codeigniter</label>
+                            <label><input type="checkbox" name="category[]" value="JQuery UI" @if(is_array(old('category')) && in_array("JQuery UI", old('category'))) checked @endif> JQuery UI</label>
                         </div>
+
+                        {!! $errors->first('category','<small>:message</small><br>') !!}
 {{--                        date type:date--}}
                         <div class="form-group">
                             <label><strong>@lang("Date") :</strong></label><br>
@@ -77,8 +78,8 @@
                         <div class="form-group">
                             <label><strong>@lang("Gender") :</strong></label><br>
                             <label>
-                                <input type="radio" name="gender" class="form-control" value="Female" checked/>Female</label>
-                            <label> <input type="radio" name="gender" class="form-control" value="Male"/>Male</label>
+                                <input type="radio" name="gender" class="form-control" value="Female" {{old('gender') === 'Female' ? 'checked='. '"checked"': ''}}/>Female</label>
+                            <label> <input type="radio" name="gender" class="form-control" value="Male" {{old('gender') === 'Male' ? 'checked='. '"checked"': ''}}/>Male</label>
                             {!! $errors->first('gender','<small>:message</small><br>') !!}
                         </div>
 

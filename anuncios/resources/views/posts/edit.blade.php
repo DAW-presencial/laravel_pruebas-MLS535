@@ -34,41 +34,46 @@
                         <div class="form-group">
                             <label><strong> {{__("Name")}} :</strong></label>
                             <input type="text" name="name" class="form-control"  value="{{old('name',$post->name)  }}"/>
+                            {!! $errors->first('size','<small>:message</small><br>') !!}
                         </div>
                         <div class="form-group">
                             <label><strong>@lang("Category") :</strong></label><br>
-                            <label><input type="checkbox" name="category[]" value="Laravel"> Laravel</label>
-                            <label><input type="checkbox" name="category[]" value="JQuery"> JQuery</label>
-                            <label><input type="checkbox" name="category[]" value="Bootstrap"> Bootstrap</label>
-                            <label><input type="checkbox" name="category[]" value="Codeigniter"> Codeigniter</label>
-                            <label><input type="checkbox" name="category[]" value="JQuery UI"> JQuery UI</label>
+                            <label><input type="checkbox" name="category[]" value="Laravel" @if(is_array(old('category')) && in_array("Laravel", old('category'))) checked @endif> Laravel</label>
+                            <label><input type="checkbox" name="category[]" value="JQuery" @if(is_array(old('category')) && in_array("JQuery", old('category'))) checked @endif> JQuery</label>
+                            <label><input type="checkbox" name="category[]" value="Bootstrap" @if(is_array(old('category')) && in_array("Bootstrap", old('category'))) checked @endif> Bootstrap</label>
+                            <label><input type="checkbox" name="category[]" value="Codeigniter" @if(is_array(old('category')) && in_array("Codeigniter", old('category'))) checked @endif> Codeigniter</label>
+                            <label><input type="checkbox" name="category[]" value="JQuery UI" @if(is_array(old('category')) && in_array("JQuery UI", old('category'))) checked @endif> JQuery UI</label>
+                            {!! $errors->first('size','<small>:message</small><br>') !!}
                         </div>
                         <div class="form-group">
                             <label><strong>@lang("Date"):</strong></label><br>
                             <input type="date" name="date" class="form-control" value="{{old('date',$post->date)}}"/>
+                            {!! $errors->first('size','<small>:message</small><br>') !!}
                         </div>
 
                         <div class="form-group">
                             <label><strong>@lang("Number of hours done"):</strong></label><br>
                             <input type="number" name="number" class="form-control" value="{{old('number',$post->number)}}"/>
+                            {!! $errors->first('size','<small>:message</small><br>') !!}
                         </div>
 
                         <div class="form-group">
                             <label>@lang("Participant")</label>
                             <select class="form-control" name="size" >
-                                <option selected>Pick Size</option>
-                                <option value="2">2</option>
-                                <option value="4">4</option>
-                                <option value="8">8</option>
+                                <option @if(old('size') === 'Pick Size') selected @endif>Pick Size</option>
+                                <option value="2" @if(old('size') === '2') selected @endif>2</option>
+                                <option value="4" @if(old('size') === '4') selected @endif>4</option>
+                                <option value="8" @if(old('size') === '8') selected @endif>8</option>
                             </select>
+                            {!! $errors->first('size','<small>:message</small><br>') !!}
                             <small class="form-text text-muted">Your tournament size</small>
                         </div>
 
                         <div class="form-group">
                             <label><strong>@lang("Gender"):</strong></label><br>
                             <label>
-                                <input type="radio" name="gender" class="form-control" value="Female" checked/>Female</label>
-                            <label> <input type="radio" name="gender" class="form-control" value="Male"/>Male</label>
+                                <input type="radio" name="gender" class="form-control" value="Female" {{old('gender') === 'Female' ? 'checked='. '"checked"': ''}}/>Female</label>
+                            <label> <input type="radio" name="gender" class="form-control" value="Male"  {{old('gender') === 'Male' ? 'checked='. '"checked"': ''}}/>Male</label>
                         </div>
 
                         <div class="form-group">
