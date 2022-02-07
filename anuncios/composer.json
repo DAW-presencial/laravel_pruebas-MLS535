@@ -12,8 +12,7 @@
         "laravel-lang/publisher": "^12.2",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5",
-      "ext-mongodb": "*"
+        "laravel/tinker": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
