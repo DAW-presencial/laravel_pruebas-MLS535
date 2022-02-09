@@ -15,15 +15,15 @@ class Post extends Model
      */
 
 
-    public function setCategoryAttribute($value)
-    {
-        $this->attributes['category'] = json_encode($value);
-    }
-
-    public function getCategoryAttribute($value)
-    {
-        return $this->attributes['category'] = json_decode($value);
-    }
+//    public function setCategoryAttribute($value)
+//    {
+//        $this->attributes['category'] = json_encode($value);
+//    }
+//
+//    public function getCategoryAttribute($value)
+//    {
+//        return $this->attributes['category'] = json_decode($value);
+//    }
 
     public function user(){
         return $this->belongsTo(User::class);

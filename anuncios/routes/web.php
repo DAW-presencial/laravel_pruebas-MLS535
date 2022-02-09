@@ -16,10 +16,7 @@ use App\Http\Controllers\PostController;
 
 Route::view('/','home')->name('home');
 
-Route::fallback(function () {
-    return redirect('/');
 
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,10 +24,13 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::resource('posts',PostController::class)->middleware(['auth']);
 
 //IMPORTANTE PORQUE CAMBIA EL IDIOMA!
 Route::get('language-change', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
 
-Route::resource('posts',PostController::class)->middleware(['auth']);
 
+Route::fallback(function () {
+    return redirect('/');
 
+});
