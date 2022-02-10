@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\FlightController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('language-change', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
+Route::resource('flights',FlightController::class);
+
+//Route::fallback(function () {
+//    return redirect('/');
+//});

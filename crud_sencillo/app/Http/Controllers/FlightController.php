@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SaveRequest;
 use App\Models\Flight;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,8 @@ class FlightController extends Controller
     public function index()
     {
         //
+        $flights= Flight::all();
+        return view('flights.index', compact('flights'));
     }
 
     /**
@@ -25,6 +28,7 @@ class FlightController extends Controller
     public function create()
     {
         //
+        return view('flights.create');
     }
 
     /**
@@ -33,9 +37,20 @@ class FlightController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SaveRequest $request)
     {
         //
+        $flights = $request->all();
+
+        Flight::create($flights);
+
+
+//        $input = $request->input('size');
+
+
+        return redirect()->route('flights.index');
+
+
     }
 
     /**
@@ -47,6 +62,7 @@ class FlightController extends Controller
     public function show(Flight $flight)
     {
         //
+        return view('flights.show', compact('flight'));
     }
 
     /**
@@ -58,6 +74,7 @@ class FlightController extends Controller
     public function edit(Flight $flight)
     {
         //
+        return view('flights.edit', compact('flight'));
     }
 
     /**
@@ -67,9 +84,17 @@ class FlightController extends Controller
      * @param  \App\Models\Flight  $flight
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Flight $flight)
+    public function update(SaveRequest $request, Flight $flight)
     {
         //
+        $input = $request->validated();
+        $request->all();
+        $flight->update($input);
+        //$post->update( $request->all());
+
+        return redirect()->route('flights.index')
+            ->with('success', 'Product updated successfully');
+
     }
 
     /**
@@ -81,5 +106,9 @@ class FlightController extends Controller
     public function destroy(Flight $flight)
     {
         //
+        $flight->delete();
+
+        return redirect()->route('flights.index');
+
     }
 }
