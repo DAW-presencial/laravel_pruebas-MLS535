@@ -73,15 +73,19 @@
                         </div>
 
                         <label> @lang("Relation"):<br>
-                            <label><input type="checkbox" name="relation[]" value="Family"
-                                          @if(is_array(old('relation')) && in_array("Family", old('relation'))) checked @endif> {{ ("Family") }}
+                            <label><input type="checkbox" name="category[]" value="Family"
+                                          @if(is_array(old('category')) && in_array("Family", old('category'))) checked @endif> {{ ("Family") }}
                             </label>
-                            <label><input type="checkbox" name="relation[]" value="Friend"
-                                          @if(is_array(old('relation')) && in_array("Friend", old('relation'))) checked @endif> {{ ("Friend") }}
+                            <label><input type="checkbox" name="category[]" value="Friend"
+                                          @if(is_array(old('category')) && in_array("Friend", old('category'))) checked @endif> {{ ("Friend") }}
                             </label>
-                            <label><input type="checkbox" name="relation[]" value="Colleague"
-                                          @if(is_array(old('relation')) && in_array("Colleague", old('relation'))) checked @endif> {{ __("Colleague") }}
+                            <label><input type="checkbox" name="category[]" value="Colleague"
+                                          @if(is_array(old('category')) && in_array("Colleague", old('category'))) checked @endif> {{ __("Colleague") }}
                             </label>
+                        </label>
+
+                        <label for="image">
+                            <input type="file" name="image"/>
                         </label>
 
                         <div class="form-group text-center">

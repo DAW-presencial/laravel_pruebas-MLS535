@@ -33,6 +33,7 @@
                             <th>Participant</th>
                             <th>Radio</th>
                             <th>Description</th>
+                            <th>Category</th>
                         </tr>
                         @foreach($flights as $post)
                             <tr>
@@ -43,6 +44,7 @@
                                 <td>{{ $post->gender }}</td>
                                 <td>{{ $post->description }}</td>
                                 <td>{{ $post->category }}</td>
+
                                 <td>
                                     <form action="{{ route('flights.destroy',$post) }}" method="POST">
 

@@ -21,6 +21,6 @@ Route::get('/', function () {
 Route::get('language-change', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
 Route::resource('flights',FlightController::class);
 
-//Route::fallback(function () {
-//    return redirect('/');
-//});
+Route::fallback(function () {
+    return redirect('/');
+});

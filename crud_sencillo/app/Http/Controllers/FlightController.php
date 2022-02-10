@@ -40,6 +40,7 @@ class FlightController extends Controller
     public function store(SaveRequest $request)
     {
         //
+
         $flights = $request->all();
         $flights['category'] = join(',', $request->category);
         $flights['image'] = $request->file('image')->storeAS('contacts_img', $request->image->getClientOriginalName());
@@ -88,9 +89,13 @@ class FlightController extends Controller
     public function update(SaveRequest $request, Flight $flight)
     {
         //
-        $input = $request->validated();
-        $request->all();
-        $flight->update($input);
+//        $input = $request->validated();
+        $inputs =$request->all();
+        var_dump($request->category);
+        $inputs['category'] = join(',', $request->category);
+
+        $inputs['image'] = $request->file('image')->storeAS('contacts_img', $request->image->getClientOriginalName());
+        $flight->update($inputs);
         //$post->update( $request->all());
 
         return redirect()->route('flights.index')
