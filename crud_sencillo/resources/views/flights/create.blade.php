@@ -36,6 +36,11 @@
                             {!! $errors->first('name','<small>:message</small><br>') !!}
                         </div>
 
+                        <div class="form-group">
+                            <label><strong>@lang("CheckBox") :</strong></label>
+                            <input type="checkbox" name="checkbox" class="form-control" value="{{old('checkbox')}}" />
+
+                        </div>
                         {!! $errors->first('category','<small>:message</small><br>') !!}
                         {{--                        date type:date--}}
                         <div class="form-group">
