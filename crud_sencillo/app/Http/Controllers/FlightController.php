@@ -41,7 +41,8 @@ class FlightController extends Controller
     {
         //
         $flights = $request->all();
-
+        $flights['category'] = join(',', $request->category);
+        $flights['image'] = $request->file('image')->storeAS('contacts_img', $request->image->getClientOriginalName());
         Flight::create($flights);
 
 

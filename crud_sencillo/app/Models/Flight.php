@@ -9,5 +9,5 @@ class Flight extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','number','date','size','gender','description'];
+    protected $fillable = ['name','number','date','size','gender','description', 'category', 'image'];
 }

@@ -83,9 +83,22 @@
                             {!! $errors->first('description','<small>:message</small><br>') !!}
                         </div>
 
-                        {{--  email--}}
+                        {{--  CHECKBOX--}}
+                        <label> @lang("category"):<br>
+                            <label><input type="checkbox" name="category[]" value="Family"
+                                          @if(is_array(old('category')) && in_array("Family", old('category'))) checked @endif> {{ ("Family") }}
+                            </label>
+                            <label><input type="checkbox" name="category[]" value="Friend"
+                                          @if(is_array(old('category')) && in_array("Friend", old('category'))) checked @endif> {{ ("Friend") }}
+                            </label>
+                            <label><input type="checkbox" name="category[]" value="Colleague"
+                                          @if(is_array(old('category')) && in_array("Colleague", old('category'))) checked @endif> {{ __("Colleague") }}
+                            </label>
+                        </label>
 
-
+                        <label for="image">
+                            <input type="file" name="image"/>
+                        </label>
 
                         <p></p>
                         <div class="form-group text-center">

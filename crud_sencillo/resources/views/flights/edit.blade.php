@@ -72,6 +72,18 @@
                             <textarea class="form-control" rows="4" cols="40" name="description">{{old('description',$flight->description)}}</textarea>
                         </div>
 
+                        <label> @lang("Relation"):<br>
+                            <label><input type="checkbox" name="relation[]" value="Family"
+                                          @if(is_array(old('relation')) && in_array("Family", old('relation'))) checked @endif> {{ ("Family") }}
+                            </label>
+                            <label><input type="checkbox" name="relation[]" value="Friend"
+                                          @if(is_array(old('relation')) && in_array("Friend", old('relation'))) checked @endif> {{ ("Friend") }}
+                            </label>
+                            <label><input type="checkbox" name="relation[]" value="Colleague"
+                                          @if(is_array(old('relation')) && in_array("Colleague", old('relation'))) checked @endif> {{ __("Colleague") }}
+                            </label>
+                        </label>
+
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-success btn-sm">@lang("Save")</button>
                         </div>

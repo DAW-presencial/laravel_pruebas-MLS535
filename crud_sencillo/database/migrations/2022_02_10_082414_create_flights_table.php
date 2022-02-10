@@ -15,12 +15,14 @@ class CreateFlightsTable extends Migration
     {
         Schema::create('flights', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('number');
-            $table->date('date');
-            $table->string('size');
-            $table->string('gender');
-            $table->longText('description');
+            $table->string('name')->nullable();
+            $table->integer('number')->nullable();
+            $table->date('date')->nullable();
+            $table->string('size')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('category')->nullable();
+            $table->string('image')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

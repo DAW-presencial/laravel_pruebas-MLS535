@@ -42,6 +42,7 @@
                                 <td>{{ $post->size }}</td>
                                 <td>{{ $post->gender }}</td>
                                 <td>{{ $post->description }}</td>
+                                <td>{{ $post->category }}</td>
                                 <td>
                                     <form action="{{ route('flights.destroy',$post) }}" method="POST">
 
