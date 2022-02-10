@@ -14,9 +14,9 @@ use App\Http\Controllers\FlightController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('flights.index');
+});
 
 Route::get('language-change', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
 Route::resource('flights',FlightController::class);
