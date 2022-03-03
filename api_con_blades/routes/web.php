@@ -16,6 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function (){
-    return view('musicos.index');
-});
+Route::resource('musicos', MusicoController::class)->names('musician')->parameters(['musician' => 'musico']);
