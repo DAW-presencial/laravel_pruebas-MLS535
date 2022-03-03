@@ -1,4 +1,4 @@
-const url = '/api_con_blades/public/api/musician';
+const url = '/laravel_pruebas-MLS535/api_con_blades/public/api/musician';
 
 document.addEventListener('DOMContentLoaded',() => {
     getMusicos()
