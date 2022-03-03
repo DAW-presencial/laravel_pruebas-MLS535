@@ -1,4 +1,4 @@
-const url = '/api/musician';
+const url = '/api_con_blades/public/api/musician';
 
 document.addEventListener('DOMContentLoaded',() => {
     getMusicos()
