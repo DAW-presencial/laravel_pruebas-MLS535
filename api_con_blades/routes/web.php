@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::resource('musicos', MusicoController::class)->names('musicos')->parameters(['musician' => 'musico']);
+Route::resource('musicos', MusicoController::class)->names('musician')->parameters(['musician' => 'musico']);

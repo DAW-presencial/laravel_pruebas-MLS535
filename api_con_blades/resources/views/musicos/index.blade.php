@@ -99,7 +99,7 @@
             </div>
 
         </div>
-        <a href="laravel_pruebas-MLS535/api_con_blades/public/api/musician"><button class="btn btn-outline-secondary m-5 justify-content-center">Visualizar JSON</button></a>
+        <a href="/api/musician"><button class="btn btn-outline-secondary m-5 justify-content-center">Visualizar JSON</button></a>
     </div>
 
 <script src="js/apirest.js"></script>
