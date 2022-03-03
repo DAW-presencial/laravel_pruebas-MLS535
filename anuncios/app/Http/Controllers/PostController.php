@@ -22,7 +22,7 @@ class PostController extends Controller
     {
         //
         $posts = Post::where('user_id', Auth::id())->get();
-        return view('posts.index', compact('posts'),['newPost'=> new Post]);
+        return view('posts.index', compact('posts'));
     }
 
     /**
