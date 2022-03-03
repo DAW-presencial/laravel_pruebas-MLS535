@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', view('musicos.index'));
+Route::get('/', function (){
+    return view('musicos.index');
+});
